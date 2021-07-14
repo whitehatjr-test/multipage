@@ -43,6 +43,9 @@ def load_data():
 car_df = load_data()
 
 st.title("Welcome to Car Price Prediction App")
+st.write("You can learn how to host a stream app on Heroku by watching this video:")
+with st.beta_expander("Watch Video"):
+	st.video("https://youtu.be/oBA5I__AfmY")
 st.sidebar.title('Navigation')
 selection = st.sidebar.radio("Go to", list(PAGES.keys()))
 page = PAGES[selection]
