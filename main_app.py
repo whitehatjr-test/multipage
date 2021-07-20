@@ -10,7 +10,7 @@ import predict
 @st.cache()
 def load_data():
     # Read the dataset
-    df = pd.read_csv("https://student-datasets-bucket.s3.ap-south-1.amazonaws.com/whitehat-ds-datasets/car-prices.csv")
+    df = pd.read_csv("car-prices.csv")
 
 
     df = df[['enginesize','horsepower','carwidth','drivewheel','price']]
