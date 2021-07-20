@@ -20,14 +20,20 @@ def app(car_df):
 
     if 'Line Chart' in plot_list:
         st.subheader("Line Chart")
-        lc = st.selectbox("Select the variable for Line chart",('enginesize','horsepower','carwidth','drivewheel','price'))
-        st.line_chart(car_df[lc])
+        lc_x = st.selectbox("Select the X-axis for Line chart",('enginesize','horsepower','carwidth','price'))
+        lc_y = st.selectbox("Select the Y-axis for Line chart",('enginesize','horsepower','carwidth','price'))
+        #st.line_chart(car_df[lc_x])
+        #st.write(car_df.index)
+        plt.plot(car_df[lc_x],car_df[lc_y])
+        st.pyplot()
             
     if 'Area Chart' in plot_list:
         st.subheader("Area Chart")
-        ac = st.selectbox("Select the variable for Area chart",('enginesize','horsepower','carwidth','drivewheel','price'))
-        st.area_chart(car_df[ac])
-
+        ac_x = st.selectbox("Select the X-axis for Area chart",('enginesize','horsepower','carwidth','price'))
+        ac_y = st.selectbox("Select the Y-axis for Area chart",('enginesize','horsepower','carwidth','price'))
+        #st.area_chart(car_df[ac_x])
+        plt.stackplot(car_df[ac_x], car_df[ac_y])
+        st.pyplot()
 
     if 'Box Plot' in plot_list:
         st.subheader("Box Plot")
